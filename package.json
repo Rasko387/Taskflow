@@ -4,12 +4,13 @@
   "description": "Gestionnaire de tâches collaboratif",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node --env-file-if-exists=../.env server.js",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run lint && npm run format:check"
+    "check": "npm run lint && npm run format:check",
+    "prepare": "husky"
   },
   "dependencies": {
     "express": "^4.21.0"
@@ -18,6 +19,10 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.11.0",
     "globals": "^17.12.0",
+    "husky": "^9.1.7",
     "prettier": "^3.9.9"
+  },
+  "engines": {
+    "node": ">=24 <25"
   }
 }

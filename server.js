@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
 
-const PORT = 3000;
-
-const SECRET_KEY = 'ma-super-cle-secrete-2026';
+const PORT = Number(process.env.PORT || 3000);
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -144,5 +142,4 @@ app.get('/search', (req, res) => {
 // ──────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`TaskFlow démarré sur http://localhost:${PORT}`);
-  console.log(`Secret : ${SECRET_KEY}`);
 });
